@@ -1,7 +1,3 @@
-// Import stylesheets
-import './style.css';
-
-// Write TypeScript code!
 const app: HTMLElement = document.getElementById('app');
 
 import { cnv, draw, sprites } from './setup';
@@ -9,8 +5,10 @@ import { cnv, draw, sprites } from './setup';
 app.appendChild(cnv);
 const pen = cnv.getContext('2d');
 
+import * as myimg from './john.png';
+console.log(myimg);
 let img = new Image(50, 50);
-img.src = "https://i.postimg.cc/0NDcHqG9/New-Piskel-1-png.png"
+img.src = './images/towers/john.png';
 
 sprites.push({ src: img });
 
