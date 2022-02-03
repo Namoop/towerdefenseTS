@@ -5,12 +5,15 @@ import { cnv, draw, sprites } from './setup';
 app.appendChild(cnv);
 const pen = cnv.getContext('2d');
 
-import * as myimg from './john.png';
-console.log(myimg);
+//import * as myimg from './john.png';
+//import {Sharp} from "sharp";
+//Sharp("john.png")
+//console.log(myimg);
 let img = new Image(50, 50);
-img.src = './images/towers/john.png';
+document.body.appendChild(img);
+img.src = './john.png';
 
-sprites.push({ src: img });
+//sprites.push({ src: img });
 
 function run() {}
 /**
