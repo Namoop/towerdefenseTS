@@ -12,7 +12,11 @@ export const sprites: SpriteObj = {};
 
 export function draw(): void {
   for (let i of Object.values(sprites)) {
+    pen.save()
+    pen.translate(i.x,i.y)
+    pen.rotate(i.direction*Math.PI/180)
     pen.drawImage(i.src, 0, 0);
+    pen.restore()
   }
 }
 

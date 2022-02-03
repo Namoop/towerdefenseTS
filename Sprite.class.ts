@@ -2,7 +2,7 @@ export class Sprite {
   src = new Image();
   x = 0;
   y = 0;
-  direction: 0;
+  direction = 0;
   size = 100;
   width = 100;
   height = 100;

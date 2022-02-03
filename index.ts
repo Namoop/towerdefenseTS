@@ -6,10 +6,10 @@ import { Sprite } from "./Sprite.class"
 app.appendChild(cnv);
 const pen = cnv.getContext('2d');
 
-new Sprite("steve.png", sprites)
-  .move(100, 100)
+let test = new Sprite("steve.png", sprites)
+  .move(140, 100)
 
-function run() {}
+function run() {test.direction++}
 /**
  * Options that can change how the game runs
  * - Gamespeed: Time between ticks (milliseconds)
