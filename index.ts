@@ -10,7 +10,7 @@ const pen = cnv.getContext('2d');
 //console.log(myimg);
 let img = new Image(70, 50);
 document.body.appendChild(img);
-img.src = "https://github.com/Namoop/towerdefenseTS/blob/master/assets/images/john.png"
+img.src = "https://raw.githubusercontent.com/Namoop/towerdefenseTS/master/assets/images/john.png"
 //'./john.png';
 
 
