@@ -1,8 +1,5 @@
 {
   "name": "typescript",
   "version": "0.0.0",
-  "private": true,
-  "dependencies": {
-    "sharp": "^0.30.0"
-  }
+  "private": true
 }
