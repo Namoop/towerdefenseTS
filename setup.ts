@@ -1,3 +1,5 @@
+import { Sprite } from './Sprite.class';
+
 export const cnv = document.createElement('canvas');
 cnv.oncontextmenu = function () {
   return false;
@@ -5,10 +7,13 @@ cnv.oncontextmenu = function () {
 //const scale: number = (window.innerWidth - 20) / 800;
 cnv.style.border = '3px solid #000000';
 const pen = cnv.getContext('2d');
+type SpriteObj = { [key: string]: Sprite };
+export const sprites: SpriteObj = {};
 
-export const sprites = []
-export function draw ():void {
-  for (let i of sprites) pen.drawImage(i.src, 0, 0)
+export function draw(): void {
+  for (let i of Object.values(sprites)) {
+    pen.drawImage(i.src, 0, 0);
+  }
 }
 
 Object.defineProperty(window, 'here', {

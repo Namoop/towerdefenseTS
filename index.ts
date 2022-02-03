@@ -1,20 +1,13 @@
 const app: HTMLElement = document.getElementById('app');
 
 import { cnv, draw, sprites } from './setup';
+import { Sprite } from "./Sprite.class"
 
 app.appendChild(cnv);
 const pen = cnv.getContext('2d');
 
-//import * as myimg from './john.png';
-//Sharp("john.png")
-//console.log(myimg);
-let img = new Image(70, 50);
-document.body.appendChild(img);
-img.src = "https://raw.githubusercontent.com/Namoop/towerdefenseTS/master/assets/images/steve.png"
-//'./john.png';
-
-
-//sprites.push({ src: img });
+new Sprite("steve.png", sprites)
+  .move(100, 100)
 
 function run() {}
 /**
