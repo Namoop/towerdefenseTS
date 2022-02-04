@@ -6,8 +6,9 @@ import { Sprite } from "./Sprite.class"
 app.appendChild(cnv);
 const pen = cnv.getContext('2d');
 
-let test = new Sprite("steve.png", sprites)
+let test = new Sprite("bob.png", sprites)
   .move(140, 100)
+  .setSize(100)
 
 function run() {test.direction++}
 /**
