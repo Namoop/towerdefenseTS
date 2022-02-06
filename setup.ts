@@ -1,5 +1,3 @@
-import { Sprite } from './Sprite.class';
-
 export const cnv = document.createElement('canvas');
 cnv.oncontextmenu = function () {
   return false;
@@ -7,15 +5,20 @@ cnv.oncontextmenu = function () {
 //const scale: number = (window.innerWidth - 20) / 800;
 cnv.style.border = '3px solid #000000';
 const pen = cnv.getContext('2d');
-type SpriteObj = { [key: string]: Sprite };
-export const sprites: SpriteObj = {};
 
 export function draw(): void {
   for (let i of Object.values(sprites)) {
     pen.save();
-    pen.translate(i.x,i.y);
+    pen.globalAlpha = i.alpha / 100;
+    pen.translate(i.x, i.y);
     pen.rotate((i.direction * Math.PI) / 180);
-    pen.drawImage(i.src, 0-i.src.width/2*i.width/100, 0-i.src.height/2*i.height/100, i.src.width*i.width/100, i.src.height*i.height/100);
+    pen.drawImage(
+      i.src,
+      0 - ((i.src.width / 2) * i.width) / 100,
+      0 - ((i.src.height / 2) * i.height) / 100,
+      (i.src.width * i.width) / 100,
+      (i.src.height * i.height) / 100
+    );
     pen.restore();
   }
 }

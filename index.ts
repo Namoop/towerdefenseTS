@@ -1,12 +1,17 @@
 const app: HTMLElement = document.getElementById('app');
+let resolveframe: Function;
+window.sprites = {}
+window.nextframe = new Promise((r) => (resolveframe = r));
 
-import { cnv, draw, sprites } from './setup';
+import { cnv, draw } from './setup';
 import { Sprite } from './Sprite.class';
 
 app.appendChild(cnv);
 const pen = cnv.getContext('2d');
 
-let test = new Sprite('bob.png', sprites).move(140, 100).setSize(100);
+let test = new Sprite('bob.png', sprites)
+  .move(100, 100)
+  .setSize(200);
 
 /**
  * Options that can change how the game runs
@@ -23,19 +28,15 @@ function run() {
   test.direction++;
 }
 
-let resolveframe: Function;
-let nextframe = new Promise((r) => (resolveframe = r));
-
-setTimeout(toodlyoo, 500);
-async function toodlyoo() {
-  while (frame < 500) {
-    await nextframe;
-    if (frame % 100 == 0) console.log(frame);
-  }
+setTimeout(toodlyoo, 2000);
+function toodlyoo() {
+  test.glide(400, 300);
 }
 
 function loop(): void {
   frame++;
+  fps.push(Date.now());
+  while (Date.now() - fps[0] > 1000) fps.shift();
   pen.clearRect(0, 0, cnv.width, cnv.height);
   cnv.width = 800 * runOptions.scale;
   cnv.height = 400 * runOptions.scale;
@@ -49,5 +50,6 @@ function loop(): void {
   }
 }
 let frame = 0;
+let fps: number[] = [];
 console.clear();
 loop();
