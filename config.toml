@@ -1,3 +1,4 @@
-[table]
+splat = 5
+[numberlarge]
 key1 = "some string"
 key2 = 123

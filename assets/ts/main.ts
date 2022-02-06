@@ -3,8 +3,10 @@ let resolveframe: Function;
 window.sprites = {};
 window.nextframe = new Promise((r) => (resolveframe = r));
 
+import { config } from './toml-loader';
 import { cnv, draw } from './setup';
 import { Sprite } from './Sprite.class';
+//console.log(config);
 
 app.appendChild(cnv);
 const pen = cnv.getContext('2d');
@@ -43,5 +45,11 @@ function loop(): void {
 let frame = 0;
 let fps: number[] = [];
 console.clear();
-init();
-loop();
+async function load() {
+  let birp = await config();
+  console.log(birp);
+
+  init();
+  loop();
+}
+load()
