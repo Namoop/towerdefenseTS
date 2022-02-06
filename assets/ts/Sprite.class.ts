@@ -8,7 +8,7 @@ export class Sprite {
   alpha = 100;
   id = Date.now();
   draggable = false;
-  constructor(src: string, sprites: any) {
+  constructor(src: string) {
     this.src.src = url + src;
     sprites[this.id] = this;
   }
@@ -53,11 +53,10 @@ export class Sprite {
 }
 
 export class Button extends Sprite {
-  constructor(src, sprites) {
-    super(src, sprites)
+  constructor(src: string) {
+    super(src);
   }
 }
-
 
 let url =
   'https://raw.githubusercontent.com/Namoop/towerdefenseTS/master/assets/images/';

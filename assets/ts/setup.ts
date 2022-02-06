@@ -23,15 +23,6 @@ export function draw(): void {
   }
 }
 
-Object.defineProperty(window, 'here', {
-  get: function () {
-    console.log('here');
-  },
-  set: function (x) {
-    console.log(x);
-  },
-});
-
 const kp: any = {};
 cnv.onkeydown = onkeyup = function (e) {
   if (e.key.length == 1)
