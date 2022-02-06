@@ -3,7 +3,7 @@ let resolveframe: Function;
 window.sprites = {};
 window.nextframe = new Promise((r) => (resolveframe = r));
 
-import { config } from './toml-loader';
+import { toml } from './toml-loader';
 import { cnv, draw } from './setup';
 import { Sprite } from './Sprite.class';
 //console.log(config);
@@ -44,12 +44,14 @@ function loop(): void {
 }
 let frame = 0;
 let fps: number[] = [];
+//config as global
 console.clear();
 async function load() {
-  //let birp = await config();
-  console.log(await config());
+  let config = await toml();
+  let bp = Number(config.splat)
+  console.log(bp +1);
 
   init();
   loop();
 }
-load()
+load();

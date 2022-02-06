@@ -12,7 +12,7 @@ interface Sprite {
 type SpriteObj = { [key: string]: Sprite };
 declare let sprites: SpriteObj;
 
-declare module '*.toml' {
-  const Content: string;
-  export default Content;
-}
+// declare module '*.toml' {
+//   const Content: string;
+//   export default Content;
+// }
