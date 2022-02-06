@@ -1,5 +1,8 @@
 {
   "name": "typescript",
   "version": "0.0.0",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@ltd/j-toml": "^1.26.0"
+  }
 }

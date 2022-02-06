@@ -1,6 +1,6 @@
 const app: HTMLElement = document.getElementById('app');
 let resolveframe: Function;
-window.sprites = {}
+window.sprites = {};
 window.nextframe = new Promise((r) => (resolveframe = r));
 
 import { cnv, draw } from './setup';
@@ -8,10 +8,6 @@ import { Sprite } from './Sprite.class';
 
 app.appendChild(cnv);
 const pen = cnv.getContext('2d');
-
-let test = new Sprite('bob.png', sprites)
-  .move(100, 100)
-  .setSize(200);
 
 /**
  * Options that can change how the game runs
@@ -24,14 +20,9 @@ export const runOptions = {
   stop: false,
   scale: (window.innerWidth - 20) / 800,
 };
-function run() {
-  test.direction++;
-}
 
-setTimeout(toodlyoo, 2000);
-function toodlyoo() {
-  test.glide(400, 300);
-}
+function init() {}
+function run() {}
 
 function loop(): void {
   frame++;
@@ -52,4 +43,5 @@ function loop(): void {
 let frame = 0;
 let fps: number[] = [];
 console.clear();
+init();
 loop();
