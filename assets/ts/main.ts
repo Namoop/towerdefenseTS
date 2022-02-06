@@ -46,8 +46,8 @@ let frame = 0;
 let fps: number[] = [];
 console.clear();
 async function load() {
-  let birp = await config();
-  console.log(birp);
+  //let birp = await config();
+  console.log(await config());
 
   init();
   loop();
